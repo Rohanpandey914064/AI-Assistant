@@ -1,0 +1,39 @@
+# ============================================================
+# Sentinel-Agent: Production Requirements
+# ============================================================
+
+# --- Core Web Framework ---
+fastapi
+uvicorn[standard]
+python-multipart
+
+# --- Data Validation ---
+pydantic
+pydantic-settings
+
+# --- LLM Provider ---
+google-genai
+
+# --- MCP (Model Context Protocol) ---
+fastmcp
+
+# --- HTTP Client (async) ---
+httpx
+
+# --- Database ---
+# sqlite-vec is installed as a system extension; use the Python loader
+sqlite-vec
+
+# --- Observability ---
+langfuse
+
+# --- Environment Variables ---
+python-dotenv
+
+# --- Utilities ---
+tenacity     # Exponential backoff for API retries
+numpy        # Required by sqlite-vec embeddings
+
+# --- Testing ---
+pytest
+pytest-asyncio

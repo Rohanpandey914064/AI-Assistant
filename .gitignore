@@ -1,0 +1,46 @@
+# ============================================================
+# Sentinel-Agent: .gitignore
+# ============================================================
+
+# --- Python ---
+__pycache__/
+*.py[cod]
+*$py.class
+*.egg-info/
+dist/
+build/
+*.egg
+
+# --- Virtual Environment ---
+venv/
+.venv/
+env/
+
+# --- Environment Variables (NEVER commit real keys) ---
+.env
+
+# --- Database ---
+database/*.db
+database/*.db-wal
+database/*.db-shm
+
+# --- IDE ---
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# --- OS ---
+.DS_Store
+Thumbs.db
+
+# --- Docker ---
+.dockerignore
+
+# --- Testing ---
+.pytest_cache/
+htmlcov/
+.coverage
+
+# --- Misc ---
+*.log
