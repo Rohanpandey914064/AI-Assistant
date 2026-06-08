@@ -223,11 +223,14 @@ async def clear_memory(session_id: str):
 
 # ============================================================
 # Serve Frontend (production mode)
+# Mount LAST — FastAPI's defined routes always take priority
+# over StaticFiles mounts, so /chat, /health, /docs still work.
 # ============================================================
 
-FRONTEND_DIR = os.path.join(os.path.dirname(__file__), "..", "frontend")
-if os.path.exists(FRONTEND_DIR):
+FRONTEND_DIR = os.path.abspath(os.path.join(os.path.dirname(__file__), "..", "frontend"))
+if os.path.isdir(FRONTEND_DIR):
     app.mount("/", StaticFiles(directory=FRONTEND_DIR, html=True), name="frontend")
+    logger.info(f"Frontend served from: {FRONTEND_DIR} at http://localhost:8000/")
 
 
 # ============================================================

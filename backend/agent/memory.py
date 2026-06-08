@@ -80,7 +80,8 @@ class VectorMemory:
         if "placeholder" in settings.gemini_api_key:
             return None
         try:
-            result = self._client.models.embed_content(
+            # Use the async aio client to avoid blocking the event loop
+            result = await self._client.aio.models.embed_content(
                 model="text-embedding-004",
                 contents=text[:8000],
                 config=types.EmbedContentConfig(task_type="RETRIEVAL_DOCUMENT")
@@ -143,9 +144,12 @@ class VectorMemory:
                         conn.enable_load_extension(False)
 
                         session_filter = "WHERE me.session_id = ?" if session_id else ""
-                        params = (json.dumps(embedding), top_k)
+                        # Params order must match SQL placeholders:
+                        # session_id (WHERE clause) → embedding (ORDER BY) → top_k (LIMIT)
                         if session_id:
-                            params = (json.dumps(embedding), session_id, top_k)
+                            params = (session_id, json.dumps(embedding), top_k)
+                        else:
+                            params = (json.dumps(embedding), top_k)
 
                         rows = conn.execute(f"""
                             SELECT me.content

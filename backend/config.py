@@ -18,7 +18,7 @@ class Settings(BaseSettings):
 
     # --- LLM ---
     gemini_api_key: str = "placeholder"
-    gemini_model: str = "gemini-3-flash"
+    gemini_model: str = "gemini-1.5-flash"
 
     # --- External APIs ---
     openweather_api_key: str = "mock"
