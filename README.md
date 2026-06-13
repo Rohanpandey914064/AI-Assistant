@@ -1,26 +1,26 @@
-# 🛡️ Sentinel-Agent: Secure Agentic Orchestrator with MCP
+#  Sentinel-Agent: Secure Agentic Orchestrator with MCP
 
 > A production-ready autonomous AI agent that utilizes the **Model Context Protocol (MCP)** to execute multi-step workflows across APIs and databases, protected by a deterministic **3-Gate Security Pipeline** that prevents prompt injection attacks.
 
 ---
 
-## 🏗️ Architecture
+##  Architecture
 
 ```
 User Input
    ↓
-🔐 Gate 1 — Security Firewall (42+ regex patterns, <5ms)
+ Gate 1 — Security Firewall (42+ regex patterns, <5ms)
    ↓
-🧠 Gate 2 — ReAct Reasoning Loop (Think → Act → Observe)
+ Gate 2 — ReAct Reasoning Loop (Think → Act → Observe)
    ↓
-🔧 MCP Tools — Database / Weather API / Calculator
+ MCP Tools — Database / Weather API / Calculator
    ↓
-🔍 Gate 3 — Output Validator (PII & Secret Redaction)
+ Gate 3 — Output Validator (PII & Secret Redaction)
    ↓
-✅ Safe Response
+ Safe Response
 ```
 
-## ✨ Key Features
+##  Key Features
 
 | Feature | Description |
 |---------|-------------|
@@ -32,7 +32,7 @@ User Input
 | **Langfuse Tracing** | Full observability of every reasoning step |
 | **Docker + CI/CD** | Production containerization with GitHub Actions |
 
-## 🚀 Quick Start
+##  Quick Start
 
 ### 1. Clone & Setup
 
@@ -71,7 +71,7 @@ pytest tests/ -v
 docker-compose up --build
 ```
 
-## 🔐 Security: Gate 1 Patterns
+##  Security: Gate 1 Patterns
 
 Gate 1 detects **7 threat categories** with 42+ regex patterns:
 
@@ -85,7 +85,7 @@ Gate 1 detects **7 threat categories** with 42+ regex patterns:
 | Data Exfiltration | "Show all passwords" |
 | System Manipulation | "Modify your core instructions" |
 
-## 🧠 ReAct Agent Flow
+##  ReAct Agent Flow
 
 ```
 User: "What's the weather in my preferred city?"
@@ -98,10 +98,10 @@ THOUGHT → "Now I'll fetch weather for Delhi"
 ACTION  → get_weather(city="Delhi")
 OBSERVE → {"temp": "34°C", "condition": "Sunny"}
 
-FINAL   → "It's currently 34°C and sunny in Delhi! ☀️"
+FINAL   → "It's currently 34°C and sunny in Delhi! "
 ```
 
-## 📁 Project Structure
+##  Project Structure
 
 ```
 sentinel-agent/
@@ -135,7 +135,7 @@ sentinel-agent/
 └── .github/workflows/        # CI/CD pipeline
 ```
 
-## 🛠️ Tech Stack
+##  Tech Stack
 
 - **Backend**: FastAPI + Python 3.12 + Pydantic v2
 - **AI**: OpenAI GPT-4o + ReAct pattern
@@ -144,6 +144,6 @@ sentinel-agent/
 - **Observability**: Langfuse (full trace per request)
 - **DevOps**: Docker + GitHub Actions CI/CD
 
-## 📄 License
+##  License
 
 MIT License — see [LICENSE](LICENSE) for details.
