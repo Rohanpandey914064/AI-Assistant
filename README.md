@@ -144,6 +144,5 @@ sentinel-agent/
 - **Observability**: Langfuse (full trace per request)
 - **DevOps**: Docker + GitHub Actions CI/CD
 
-##  License
-
+#--  License
 MIT License — see [LICENSE](LICENSE) for details.
