@@ -145,4 +145,4 @@ sentinel-agent/
 - **DevOps**: Docker + GitHub Actions CI/CD
 
 #--  License
-MIT License — see [LICENSE](LICENSE) for details.
+MIT License — see [LICENSE](LICENSE) for details
