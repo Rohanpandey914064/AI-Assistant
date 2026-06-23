@@ -143,6 +143,3 @@ sentinel-agent/
 - **Database**: SQLite + SQLite-vec (vector embeddings)
 - **Observability**: Langfuse (full trace per request)
 - **DevOps**: Docker + GitHub Actions CI/CD
-
-#--  License
-MIT License — see [LICENSE](LICENSE) for details
