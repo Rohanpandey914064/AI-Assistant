@@ -142,4 +142,4 @@ sentinel-agent/
 - **Protocol**: Model Context Protocol (MCP) via FastMCP
 - **Database**: SQLite + SQLite-vec (vector embeddings)
 - **Observability**: Langfuse (full trace per request)
-- **DevOps**: Docker + GitHub Actions CI/CD
+- **DevOps**:Docker + GitHub Actions CI/CD
