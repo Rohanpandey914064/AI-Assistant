@@ -1,5 +1,4 @@
 #  Sentinel-Agent: Secure Agentic Orchestrator with MCP
-
 > A production-ready autonomous AI agent that utilizes the **Model Context Protocol (MCP)** to execute multi-step workflows across APIs and databases, protected by a deterministic **3-Gate Security Pipeline** that prevents prompt injection attacks.
 
 ---
